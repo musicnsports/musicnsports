@@ -1,1 +1,578 @@
-<html><head><meta charset="utf-8" /><meta name="referrer" content="origin" /></head><body><script type="text/javascript" nonce="grnnzDlS">document.location.replace("https:\/\/cdn.fbsbx.com\/v\/t65.102178-21\/744657743_1566765451558046_6587397667173760043_n.jpg\/musicnsports_2_web_artifact_2_628cbdce5a6d.html?_nc_ht=cdn.fbsbx.com&_nc_ohc=SuBJ_1y-nEgQ7kNvwHr53JY&sdl=0&ccb=14-4&oh=00_AQA_P9Ym2h6g2NIcI26HFB6QB6eDDkENSnNxnHLrPpyRWQ&oe=6A556813&_nc_sid=4ee932");</script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mindful Minutes - Meditation Timer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: #333;
+        }
+        
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            padding: 40px;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #667eea;
+            margin-bottom: 8px;
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 32px;
+            font-size: 1rem;
+        }
+        
+        .timer-display {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            margin-bottom: 24px;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+        
+        .time {
+            font-size: 4rem;
+            font-weight: 300;
+            color: white;
+            font-variant-numeric: tabular-nums;
+            letter-spacing: 2px;
+        }
+        
+        .phase {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            margin-top: 8px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 500;
+        }
+        
+        .controls {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        
+        button {
+            flex: 1;
+            padding: 16px 24px;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+        
+        .btn-secondary {
+            background: #f0f0f0;
+            color: #666;
+        }
+        
+        .btn-secondary:hover {
+            background: #e0e0e0;
+        }
+        
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+        
+        .settings {
+            background: #f8f9fa;
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        
+        .setting-group {
+            margin-bottom: 20px;
+        }
+        
+        .setting-group:last-child {
+            margin-bottom: 0;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        input[type="range"] {
+            width: 100%;
+            height: 6px;
+            border-radius: 3px;
+            background: #ddd;
+            outline: none;
+            -webkit-appearance: none;
+        }
+        
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #667eea;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(102, 126, 234, 0.4);
+        }
+        
+        input[type="range"]::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #667eea;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 2px 6px rgba(102, 126, 234, 0.4);
+        }
+        
+        .value-display {
+            display: inline-block;
+            margin-left: 8px;
+            color: #667eea;
+            font-weight: 700;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        
+        .stat-card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 16px;
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 4px;
+        }
+        
+        .stat-label {
+            font-size: 0.85rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .preset-buttons {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+        
+        .preset-btn {
+            padding: 10px;
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #666;
+            transition: all 0.2s ease;
+        }
+        
+        .preset-btn:hover {
+            border-color: #667eea;
+            color: #667eea;
+            background: #f8f9ff;
+        }
+        
+        .preset-btn.active {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+        
+        .breathe-circle {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 24px;
+            position: relative;
+        }
+        
+        .breathe-circle svg {
+            transform: rotate(-90deg);
+        }
+        
+        .breathe-circle .bg-circle {
+            fill: none;
+            stroke: rgba(255, 255, 255, 0.2);
+            stroke-width: 8;
+        }
+        
+        .breathe-circle .progress-circle {
+            fill: none;
+            stroke: white;
+            stroke-width: 8;
+            stroke-linecap: round;
+            transition: stroke-dashoffset 0.3s linear;
+        }
+        
+        @keyframes breathe {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .breathing .timer-display {
+            animation: breathe 4s ease-in-out infinite;
+        }
+        
+        .footer {
+            text-align: center;
+            color: #999;
+            font-size: 0.85rem;
+            margin-top: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Mindful Minutes</h1>
+        <p class="subtitle">Breathe. Focus. Be present.</p>
+        
+        <div class="breathe-circle">
+            <svg width="200" height="200">
+                <circle class="bg-circle" cx="100" cy="100" r="90"></circle>
+                <circle class="progress-circle" cx="100" cy="100" r="90" 
+                        stroke-dasharray="565.48" 
+                        stroke-dashoffset="565.48"></circle>
+            </svg>
+        </div>
+        
+        <div class="timer-display">
+            <div class="time" id="timeDisplay">05:00</div>
+            <div class="phase" id="phaseDisplay">Ready</div>
+        </div>
+        
+        <div class="preset-buttons">
+            <button class="preset-btn" data-minutes="5">5 min</button>
+            <button class="preset-btn active" data-minutes="10">10 min</button>
+            <button class="preset-btn" data-minutes="15">15 min</button>
+            <button class="preset-btn" data-minutes="20">20 min</button>
+            <button class="preset-btn" data-minutes="30">30 min</button>
+            <button class="preset-btn" data-minutes="60">60 min</button>
+        </div>
+        
+        <div class="controls">
+            <button class="btn-primary" id="startBtn">Start</button>
+            <button class="btn-secondary" id="pauseBtn" disabled>Pause</button>
+            <button class="btn-secondary" id="resetBtn">Reset</button>
+        </div>
+        
+        <div class="settings">
+            <div class="setting-group">
+                <label for="durationSlider">
+                    Session Duration 
+                    <span class="value-display" id="durationValue">10 min</span>
+                </label>
+                <input type="range" id="durationSlider" min="1" max="60" value="10">
+            </div>
+            
+            <div class="setting-group">
+                <label for="intervalSlider">
+                    Bell Interval 
+                    <span class="value-display" id="intervalValue">5 min</span>
+                </label>
+                <input type="range" id="intervalSlider" min="1" max="15" value="5">
+            </div>
+        </div>
+        
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-value" id="sessionCount">0</div>
+                <div class="stat-label">Sessions</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="totalMinutes">0</div>
+                <div class="stat-label">Total Minutes</div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            Tip: Use headphones for interval bells
+        </div>
+    </div>
+    
+    <script>
+        // Meditation Timer App
+        class MeditationTimer {
+            constructor() {
+                this.duration = 10 * 60; // seconds
+                this.remaining = this.duration;
+                this.interval = 5 * 60; // seconds
+                this.isRunning = false;
+                this.isPaused = false;
+                this.timerId = null;
+                this.startTime = null;
+                this.pausedTime = 0;
+                this.sessionCount = parseInt(localStorage.getItem('sessionCount') || '0');
+                this.totalMinutes = parseInt(localStorage.getItem('totalMinutes') || '0');
+                
+                this.initElements();
+                this.initEventListeners();
+                this.updateStats();
+                this.updateDisplay();
+            }
+            
+            initElements() {
+                this.timeDisplay = document.getElementById('timeDisplay');
+                this.phaseDisplay = document.getElementById('phaseDisplay');
+                this.startBtn = document.getElementById('startBtn');
+                this.pauseBtn = document.getElementById('pauseBtn');
+                this.resetBtn = document.getElementById('resetBtn');
+                this.durationSlider = document.getElementById('durationSlider');
+                this.intervalSlider = document.getElementById('intervalSlider');
+                this.durationValue = document.getElementById('durationValue');
+                this.intervalValue = document.getElementById('intervalValue');
+                this.sessionCountEl = document.getElementById('sessionCount');
+                this.totalMinutesEl = document.getElementById('totalMinutes');
+                this.progressCircle = document.querySelector('.progress-circle');
+                this.presetBtns = document.querySelectorAll('.preset-btn');
+                this.container = document.querySelector('.container');
+            }
+            
+            initEventListeners() {
+                this.startBtn.addEventListener('click', () => this.start());
+                this.pauseBtn.addEventListener('click', () => this.pause());
+                this.resetBtn.addEventListener('click', () => this.reset());
+                
+                this.durationSlider.addEventListener('input', (e) => {
+                    this.duration = parseInt(e.target.value) * 60;
+                    if (!this.isRunning) {
+                        this.remaining = this.duration;
+                        this.updateDisplay();
+                    }
+                    this.durationValue.textContent = e.target.value + ' min';
+                    this.updateActivePreset();
+                });
+                
+                this.intervalSlider.addEventListener('input', (e) => {
+                    this.interval = parseInt(e.target.value) * 60;
+                    this.intervalValue.textContent = e.target.value + ' min';
+                });
+                
+                this.presetBtns.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const minutes = parseInt(btn.dataset.minutes);
+                        this.durationSlider.value = minutes;
+                        this.duration = minutes * 60;
+                        if (!this.isRunning) {
+                            this.remaining = this.duration;
+                            this.updateDisplay();
+                        }
+                        this.durationValue.textContent = minutes + ' min';
+                        this.updateActivePreset();
+                    });
+                });
+            }
+            
+            updateActivePreset() {
+                const minutes = this.duration / 60;
+                this.presetBtns.forEach(btn => {
+                    if (parseInt(btn.dataset.minutes) === minutes) {
+                        btn.classList.add('active');
+                    } else {
+                        btn.classList.remove('active');
+                    }
+                });
+            }
+            
+            start() {
+                if (this.isPaused) {
+                    this.isPaused = false;
+                    this.startTime = Date.now() - (this.duration - this.remaining) * 1000;
+                } else {
+                    this.startTime = Date.now();
+                    this.remaining = this.duration;
+                    this.container.classList.add('breathing');
+                }
+                
+                this.isRunning = true;
+                this.startBtn.disabled = true;
+                this.pauseBtn.disabled = false;
+                this.phaseDisplay.textContent = 'Meditating';
+                
+                this.timerId = setInterval(() => this.tick(), 100);
+                this.playStartSound();
+            }
+            
+            pause() {
+                this.isPaused = true;
+                this.isRunning = false;
+                clearInterval(this.timerId);
+                this.startBtn.disabled = false;
+                this.pauseBtn.disabled = true;
+                this.phaseDisplay.textContent = 'Paused';
+                this.container.classList.remove('breathing');
+            }
+            
+            reset() {
+                this.isRunning = false;
+                this.isPaused = false;
+                clearInterval(this.timerId);
+                this.remaining = this.duration;
+                this.startBtn.disabled = false;
+                this.pauseBtn.disabled = true;
+                this.phaseDisplay.textContent = 'Ready';
+                this.container.classList.remove('breathing');
+                this.updateDisplay();
+            }
+            
+            tick() {
+                const elapsed = Math.floor((Date.now() - this.startTime) / 1000);
+                this.remaining = Math.max(0, this.duration - elapsed);
+                
+                // Check for interval bells
+                const timePassed = this.duration - this.remaining;
+                if (timePassed > 0 && timePassed % this.interval === 0 && this.remaining > 0) {
+                    this.playIntervalSound();
+                }
+                
+                this.updateDisplay();
+                
+                if (this.remaining <= 0) {
+                    this.complete();
+                }
+            }
+            
+            complete() {
+                this.isRunning = false;
+                clearInterval(this.timerId);
+                this.container.classList.remove('breathing');
+                this.phaseDisplay.textContent = 'Complete';
+                this.startBtn.disabled = false;
+                this.pauseBtn.disabled = true;
+                
+                // Update stats
+                this.sessionCount++;
+                this.totalMinutes += Math.floor(this.duration / 60);
+                localStorage.setItem('sessionCount', this.sessionCount);
+                localStorage.setItem('totalMinutes', this.totalMinutes);
+                this.updateStats();
+                
+                this.playCompleteSound();
+                
+                setTimeout(() => {
+                    this.reset();
+                }, 3000);
+            }
+            
+            updateDisplay() {
+                const minutes = Math.floor(this.remaining / 60);
+                const seconds = this.remaining % 60;
+                this.timeDisplay.textContent = 
+                    String(minutes).padStart(2, '0') + ':' + 
+                    String(seconds).padStart(2, '0');
+                
+                // Update progress circle
+                const progress = 1 - (this.remaining / this.duration);
+                const circumference = 2 * Math.PI * 90;
+                const offset = circumference - (progress * circumference);
+                this.progressCircle.style.strokeDashoffset = offset;
+            }
+            
+            updateStats() {
+                this.sessionCountEl.textContent = this.sessionCount;
+                this.totalMinutesEl.textContent = this.totalMinutes;
+            }
+            
+            playStartSound() {
+                this.playTone(440, 0.2, 'sine');
+            }
+            
+            playIntervalSound() {
+                this.playTone(523.25, 0.3, 'sine');
+                setTimeout(() => this.playTone(659.25, 0.3, 'sine'), 200);
+            }
+            
+            playCompleteSound() {
+                this.playTone(523.25, 0.2, 'sine');
+                setTimeout(() => this.playTone(659.25, 0.2, 'sine'), 200);
+                setTimeout(() => this.playTone(783.99, 0.4, 'sine'), 400);
+            }
+            
+            playTone(frequency, duration, type = 'sine') {
+                try {
+                    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                    const oscillator = audioContext.createOscillator();
+                    const gainNode = audioContext.createGain();
+                    
+                    oscillator.connect(gainNode);
+                    gainNode.connect(audioContext.destination);
+                    
+                    oscillator.type = type;
+                    oscillator.frequency.value = frequency;
+                    
+                    gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+                    gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + duration);
+                    
+                    oscillator.start(audioContext.currentTime);
+                    oscillator.stop(audioContext.currentTime + duration);
+                } catch (e) {
+                    console.log('Audio not supported');
+                }
+            }
+        }
+        
+        // Initialize app when DOM is ready
+        document.addEventListener('DOMContentLoaded', () => {
+            new MeditationTimer();
+        });
+    </script>
+</body>
+</html>
