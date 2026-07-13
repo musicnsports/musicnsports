@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MusicNSports - Where Beats Meet Highlights</title>
+<meta name="description" content="Post music videos with sports visuals. Share your best NBA, NFL, Soccer highlights with Hip-Hop, Rock, EDM beats.">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          neon: {
+            cyan: '#00F5FF',
+            green: '#39FF14',
+            purple: '#B026FF'
+          },
+          dark: {
+            900: '#0A0A0F',
+            800: '#12121A',
+            700: '#1A1A26',
+            600: '#252533'
+          }
+        },
+        fontFamily: {
+          sans: ['Inter', 'system-ui', 'sans-serif'],
+          display: ['Outfit', 'sans-serif']
+        },
+        animation: {
+          'pulse-glow': 'pulseGlow 2s ease-in-out infinite alternate',
+          'slide-up': 'slideUp 0.4s ease-out',
+          'fade-in': 'fadeIn 0.3s ease-out'
+        },
+        keyframes: {
+          pulseGlow: {
+            '0%': { boxShadow: '0 0 5px #00F5FF, 0 0 10px #00F5FF' },
+            '100%': { boxShadow: '0 0 20px #00F5FF, 0 0 30px #00F5FF' }
+          },
+          slideUp: {
+            '0%': { transform: 'translateY(20px)', opacity: '0' },
+            '100%': { transform: 'translateY(0)', opacity: '1' }
+          },
+          fadeIn: {
+            '0%': { opacity: '0' },
+            '100%': { opacity: '1' }
+          }
+        }
+      }
+    }
+  }
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  body {
+    background: radial-gradient(ellipse at top, #12121A 0%, #0A0A0F 100%);
+    min-height: 100vh;
+  }
+  .glass {
+    background: rgba(26, 26, 38, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .text-glow {
+    text-shadow: 0 0 20px rgba(0, 245, 255, 0.5);
+  }
+  .btn-glow:hover {
+    box-shadow: 0 0 20px rgba(0, 245, 255, 0.4), 0 0 40px rgba(57, 255, 20, 0.2);
+  }
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+  .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>
+</head>
+<body class="text-gray-100 font-sans antialiased">
+  <!-- Header -->
+  <header class="sticky top-0 z-50 glass border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-neon-cyan to-neon-green flex items-center justify-center animate-pulse-glow">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-dark-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
+            </svg>
+          </div>
+          <div>
+            <h1 class="text-xl sm:text-2xl font-display font-extrabold bg-gradient-to-r from-neon-cyan to-neon-green bg-clip-text text-transparent">MusicNSports</h1>
+            <p class="text-xs text-gray-400 hidden sm:block">Where Beats Meet Highlights</p>
+          </div>
+        </div>
+        
+        <nav class="hidden md:flex items-center gap-6">
+          <a href="#home" class="text-sm font-medium hover:text-neon-cyan transition">Home</a>
+          <a href="#submit" class="text-sm font-medium hover:text-neon-cyan transition">Submit</a>
+          <button id="signInBtn" class="text-sm font-medium px-4 py-2 rounded-lg border border-neon-cyan/30 hover:bg-neon-cyan/10 transition">
+            Sign In
+          </button>
+        </nav>
+
+        <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg hover:bg-dark-700 transition">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+      
+      <!-- Mobile Menu -->
+      <div id="mobileMenu" class="hidden md:hidden py-4 border-t border-white/5 animate-slide-up">
+        <div class="flex flex-col gap-3">
+          <a href="#home" class="px-3 py-2 rounded-lg hover:bg-dark-700 transition">Home</a>
+          <a href="#submit" class="px-3 py-2 rounded-lg hover:bg-dark-700 transition">Submit</a>
+          <button class="text-left px-3 py-2 rounded-lg border border-neon-cyan/30 hover:bg-neon-cyan/10 transition">Sign In</button>
+          <div class="text-xs text-gray-500 px-3 pt-2">Auth coming soon - connect Supabase for real users</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-neon-cyan/5 via-transparent to-transparent pointer-events-none"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
+      <div class="text-center max-w-3xl mx-auto">
+        <h2 class="text-4xl sm:text-5xl lg:text-6xl font-display font-black mb-4 text-glow animate-fade-in">
+          Where <span class="bg-gradient-to-r from-neon-cyan to-neon-green bg-clip-text text-transparent">Beats</span> Meet 
+          <span class="bg-gradient-to-r from-neon-green to-neon-purple bg-clip-text text-transparent">Highlights</span>
+        </h2>
+        <p class="text-gray-400 text-lg sm:text-xl mb-8 max-w-2xl mx-auto">
+          Post sports visuals synced to your favorite tracks. Discover NBA dunks with Hip-Hop, NFL hits with Rock, Soccer goals with EDM.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="#submit" class="px-8 py-3.5 rounded-xl bg-gradient-to-r from-neon-cyan to-neon-green text-dark-900 font-semibold btn-glow transition hover:scale-105">
+            Submit Your Mix
+          </a>
+          <a href="#feed" class="px-8 py-3.5 rounded-xl glass font-semibold hover:bg-dark-700 transition">
+            Browse Feed
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filters -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+    <div class="glass rounded-2xl p-4 sm:p-6">
+      <h3 class="text-sm font-semibold text-gray-400 mb-4">Filter by Tags</h3>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <div class="flex-1">
+          <p class="text-xs text-gray-500 mb-2">Sports</p>
+          <div id="sportsFilters" class="flex flex-wrap gap-2"></div>
+        </div>
+        <div class="flex-1">
+          <p class="text-xs text-gray-500 mb-2">Music</p>
+          <div id="musicFilters" class="flex flex-wrap gap-2"></div>
+        </div>
+        <div class="flex items-end">
+          <button id="clearFilters" class="text-xs px-3 py-2 rounded-lg border border-white/10 hover:bg-dark-700 transition whitespace-nowrap">
+            Clear All
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Submit Form -->
+  <section id="submit" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+    <div class="glass rounded-2xl p-6 sm:p-8">
+      <h2 class="text-2xl sm:text-3xl font-display font-bold mb-2">Submit Video</h2>
+      <p class="text-gray-400 mb-6">Paste a YouTube or Vimeo link to share your sports + music combo</p>
+      
+      <form id="submitForm" class="space-y-5">
+        <div>
+          <label class="block text-sm font-medium mb-2">Video URL *</label>
+          <div class="relative">
+            <input 
+              type="url" 
+              id="videoUrl" 
+              placeholder="https://youtube.com/watch?v=... or https://vimeo.com/..."
+              class="w-full px-4 py-3 rounded-xl bg-dark-800 border border-white/10 focus:border-neon-cyan focus:ring-2 focus:ring-neon-cyan/20 outline-none transition"
+              required
+            >
+            <div id="urlStatus" class="absolute right-3 top-3.5"></div>
+          </div>
+          <p id="urlError" class="text-xs text-red-400 mt-1 hidden"></p>
+        </div>
+
+        <div id="previewContainer" class="hidden animate-slide-up">
+          <div class="rounded-xl overflow-hidden bg-dark-800 border border-white/10">
+            <div id="videoPreview" class="aspect-video bg-dark-900"></div>
+          </div>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-5">
+          <div>
+            <label class="block text-sm font-medium mb-2">Title *</label>
+            <input 
+              type="text" 
+              id="videoTitle" 
+              placeholder="Lakers vs Warriors + Drake"
+              class="w-full px-4 py-3 rounded-xl bg-dark-800 border border-white/10 focus:border-neon-cyan focus:ring-2 focus:ring-neon-cyan/20 outline-none transition"
+              required
+            >
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-2">Your Name</label>
+            <input 
+              type="text" 
+              id="userName" 
+              placeholder="Anonymous"
+              value="Anonymous"
+              class="w-full px-4 py-3 rounded-xl bg-dark-800 border border-white/10 focus:border-neon-cyan focus:ring-2 focus:ring-neon-cyan/20 outline-none transition"
+            >
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium mb-2">Description</label>
+          <textarea 
+            id="videoDesc" 
+            rows="3"
+            placeholder="Tell us about this mix..."
+            class="w-full px-4 py-3 rounded-xl bg-dark-800 border border-white/10 focus:border-neon-cyan focus:ring-2 focus:ring-neon-cyan/20 outline-none transition resize-none"
+          ></textarea>
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium mb-2">Tags</label>
+          <input 
+            type="text" 
+            id="videoTags" 
+            placeholder="NBA, Hip-Hop, Highlights"
+            class="w-full px-4 py-3 rounded-xl bg-dark-800 border border-white/10 focus:border-neon-cyan focus:ring-2 focus:ring-neon-cyan/20 outline-none transition"
+          >
+          <p class="text-xs text-gray-500 mt-1">Separate with commas. Ex: NBA, Rock, UFC</p>
+        </div>
+
+        <button 
+          type="submit" 
+          class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-gradient-to-r from-neon-cyan to-neon-green text-dark-900 font-semibold btn-glow transition hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+          id="submitBtn"
+        >
+          Post Video
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Video Feed -->
+  <section id="feed" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+    <div class="flex items-center justify-between mb-6">
+      <h2 class="text-2xl sm:text-3xl font-display font-bold">Latest Mixes</h2>
+      <span id="videoCount" class="text-sm text-gray-400"></span>
+    </div>
+    <div id="videoGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    <div id="emptyState" class="hidden text-center py-16">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto text-gray-600 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z" />
+      </svg>
+      <p class="text-gray-500">No videos match your filters</p>
+    </div>
+  </section>
+
+  <!-- Video Modal -->
+  <div id="videoModal" class="hidden fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4" aria-modal="true" role="dialog">
+    <div class="relative w-full max-w-5xl animate-slide-up">
+      <button id="closeModal" class="absolute -top-12 right-0 p-2 rounded-lg hover:bg-white/10 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+      <div class="rounded-2xl overflow-hidden bg-dark-900">
+        <div id="modalPlayer" class="aspect-video"></div>
+        <div class="p-6">
+          <h3 id="modalTitle" class="text-xl font-semibold mb-2"></h3>
+          <p id="modalDesc" class="text-gray-400 text-sm mb-4"></p>
+          <div id="modalTags" class="flex flex-wrap gap-2"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="fixed bottom-6 right-6 glass rounded-xl px-6 py-4 translate-y-20 opacity-0 transition-all duration-300 z-[200]">
+    <div class="flex items-center gap-3">
+      <div id="toastIcon"></div>
+      <p id="toastMessage" class="text-sm font-medium"></p>
+    </div>
+  </div>
+
+  <!-- Developer Guide -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+    <details class="glass rounded-2xl overflow-hidden">
+      <summary class="px-6 py-5 cursor-pointer hover:bg-dark-700/50 transition flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-neon-cyan" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+          </svg>
+          <span class="font-display font-bold text-lg">Developer Guide: Upgrade to Next.js + Supabase + Vercel</span>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transition-transform" id="chevron" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </summary>
+      <div class="px-6 pb-6 border-t border-white/5">
+        <div class="prose prose-invert max-w-none mt-6 space-y-6">
+          <div class="bg-dark-800 rounded-xl p-5 border border-white/10">
+            <h4 class="text-neon-green font-semibold mb-3">1. Deploy this file now - free on Vercel/Netlify</h4>
+            <p class="text-sm text-gray-400">Download this HTML file, push to GitHub, import to Vercel or drag-drop to Netlify. It works fully with localStorage today. Zero build step.</p>
+            <a href="https://vercel.com/new" target="_blank" class="inline-block mt-3">
+              <img src="https://vercel.com/button" alt="Deploy with Vercel" />
+            </a>
+          </div>
+
+          <div class="bg-dark-800 rounded-xl p-5 border border-white/10">
+            <h4 class="text-neon-green font-semibold mb-3">2. Upgrade to Next.js + Supabase in 10 minutes</h4>
+            <pre class="text-xs bg-dark-900 p-4 rounded-lg overflow-x-auto"><code>npx create-next-app@latest musicnsports
+cd musicnsports
+npm install @supabase/supabase-js</code></pre>
+          </div>
+
+          <div class="bg-dark-800 rounded-xl p-5 border border-white/10">
+            <h4 class="text-neon-green font-semibold mb-3">3. Supabase SQL: profiles/videos tables</h4>
+            <pre class="text-xs bg-dark-900 p-4 rounded-lg overflow-x-auto"><code>-- Enable Row Level Security
+CREATE TABLE profiles (
+  id UUID REFERENCES auth.users PRIMARY KEY,
+  username TEXT UNIQUE,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+
+CREATE TABLE videos (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  user_id UUID REFERENCES auth.users,
+  title TEXT NOT NULL,
+  description TEXT,
+  video_url TEXT NOT NULL,
+  video_id TEXT NOT NULL,
+  platform TEXT NOT NULL CHECK (platform IN ('youtube', 'vimeo')),
+  thumbnail TEXT,
+  tags TEXT[],
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+
+-- RLS Policies
+ALTER TABLE videos ENABLE ROW LEVEL SECURITY;
+
+CREATE POLICY "Videos are viewable by everyone" 
+ON videos FOR SELECT USING (true);
+
+CREATE POLICY "Users can insert their own videos" 
+ON videos FOR INSERT WITH CHECK (auth.uid() = user_id);
+
+CREATE POLICY "Users can update own videos" 
+ON videos FOR UPDATE USING (auth.uid() = user_id);</code></pre>
+          </div>
+
+          <div class="bg-dark-800 rounded-xl p-5 border border-white/10">
+            <h4 class="text-neon-green font-semibold mb-3">4. parseVideoUrl function - reuse from this file</h4>
+            <pre class="text-xs bg-dark-900 p-4 rounded-lg overflow-x-auto"><code>// utils/parseVideoUrl.ts
+export function parseVideoUrl(url: string) {
+  const ytRegex = /(?:youtube\.com\/(?:watch\?v=|embed\/|v\/)|youtu\.be\/)([\w-]{11})/;
+  const vimeoRegex = /vimeo\.com\/(\d+)/;
+  
+  const ytMatch = url.match(ytRegex);
+  if (ytMatch) return {
+    platform: 'youtube',
+    id: ytMatch[1],
+    thumbnail: `https://img.youtube.com/vi/${ytMatch[1]}/hqdefault.jpg`,
+    embed: `https://www.youtube.com/embed/${ytMatch[1]}`
+  };
+  
+  const vimeoMatch = url.match(vimeoRegex);
+  if (vimeoMatch) return {
+    platform: 'vimeo',
+    id: vimeoMatch[1],
+    thumbnail: '/vimeo-placeholder.jpg',
+    embed: `https://player.vimeo.com/video/${vimeoMatch[1]}`
+  };
+  
+  return null;
+}</code></pre>
+          </div>
+
+          <div class="bg-dark-800 rounded-xl p-5 border border-white/10">
+            <h4 class="text-neon-green font-semibold mb-3">5. Swap localStorage for Supabase</h4>
+            <p class="text-sm text-gray-400 mb-3">Replace the `storage` object in this file with Supabase client calls:</p>
+            <pre class="text-xs bg-dark-900 p-4 rounded-lg overflow-x-auto"><code>// lib/supabase.ts
+import { createClient } from '@supabase/supabase-js'
+export const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+)
+
+// Replace storage.getVideos() with:
+const { data } = await supabase.from('videos')
+  .select('*').order('created_at', { ascending: false })
+
+// Replace storage.addVideo() with:
+const parsed = parseVideoUrl(url)
+await supabase.from('videos').insert({
+  user_id: user.id,
+  title, description, video_url: url,
+  video_id: parsed.id, platform: parsed.platform,
+  thumbnail: parsed.thumbnail, tags
+})</code></pre>
+          </div>
+
+          <div class="bg-dark-800 rounded-xl p-5 border border-white/10">
+            <h4 class="text-neon-green font-semibold mb-3">6. .env Setup</h4>
+            <pre class="text-xs bg-dark-900 p-4 rounded-lg overflow-x-auto"><code>NEXT_PUBLIC_SUPABASE_URL=https://xyzcompany.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR...</code></pre>
+            <p class="text-xs text-gray-500 mt-2">Add these in Vercel Project Settings > Environment Variables</p>
+          </div>
+        </div>
+      </div>
+    </details>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/5 mt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid sm:grid-cols-3 gap-8 mb-8">
+        <div>
+          <div class="flex items-center gap-2 mb-3">
+            <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-neon-cyan to-neon-green"></div>
+            <span class="font-display font-bold">MusicNSports</span>
+          </div>
+          <p class="text-sm text-gray-500">We don't host videos. All content embedded from YouTube/Vimeo.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-3 text-sm">Legal</h4>
+          <ul class="space-y-2 text-sm text-gray-500">
+            <li><a href="#" class="hover:text-neon-cyan transition">DMCA Notice</a></li>
+            <li><a href="#" class="hover:text-neon-cyan transition">Terms of Service</a></li>
+            <li><a href="#" class="hover:text-neon-cyan transition">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-3 text-sm">Actions</h4>
+          <button id="reportBtn" class="text-sm text-gray-500 hover:text-neon-cyan transition">Report Content</button>
+        </div>
+      </div>
+      <div class="pt-8 border-t border-white/5 text-center text-xs text-gray-600">
+        <p>&copy; 2025 MusicNSports. Not affiliated with YouTube, Vimeo, NBA, NFL, UFC.</p>
+      </div>
+    </div>
+  </footer>
+
+<script>
+  // Constants
+  const SPORTS_TAGS = ['NBA', 'NFL', 'Soccer', 'UFC', 'MLB', 'NHL'];
+  const MUSIC_TAGS = ['Hip-Hop', 'Rock', 'EDM', 'Pop', 'R&B', 'Metal'];
+  const STORAGE_KEY = 'mns_videos';
+
+  // State
+  let videos = [];
+  let activeFilters = { sports: [], music: [] };
+
+  // Mock Backend: localStorage
+  const storage = {
+    getVideos() {
+      const data = localStorage.getItem(STORAGE_KEY);
+      if (!data) return this.seed();
+      try {
+        return JSON.parse(data);
+      } catch {
+        return this.seed();
+      }
+    },
+    saveVideos(data) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+    },
+    addVideo(video) {
+      videos.unshift({ ...video, id: Date.now(), createdAt: new Date().toISOString() });
+      this.saveVideos(videos);
+    },
+    seed() {
+      const demo = [
+        {
+          id: 1,
+          title: 'NBA Playoff Dunks + Drake - Started From The Bottom',
+          description: 'Best playoff slams from 2024 synced to Drake. LeBron, Giannis, Ja highlights.',
+          videoUrl: 'https://www.youtube.com/watch?v=nWyhUoxAb3w',
+          videoId: 'nWyhUoxAb3w',
+          platform: 'youtube',
+          thumbnail: 'https://img.youtube.com/vi/nWyhUoxAb3w/hqdefault.jpg',
+          tags: ['NBA', 'Hip-Hop'],
+          userName: 'HoopMixes',
+          createdAt: new Date(Date.now() - 86400000).toISOString()
+        },
+        {
+          id: 2,
+          title: 'NFL Hardest Hits + Metallica - Enter Sandman',
+          description: 'Bone-crushing tackles and game-winning plays with classic Metallica.',
+          videoUrl: 'https://www.youtube.com/watch?v=CD-E-LDc384',
+          videoId: 'CD-E-LDc384',
+          platform: 'youtube',
+          thumbnail: 'https://img.youtube.com/vi/CD-E-LDc384/hqdefault.jpg',
+          tags: ['NFL', 'Metal', 'Rock'],
+          userName: 'GridironBeats',
+          createdAt: new Date(Date.now() - 172800000).toISOString()
+        },
+        {
+          id: 3,
+          title: 'Soccer Insane Goals + David Guetta - Titanium',
+          description: 'Messi, Ronaldo, Mbappe world-class goals edited to EDM perfection.',
+          videoUrl: 'https://www.youtube.com/watch?v=JRfuAukYTKg',
+          videoId: 'JRfuAukYTKg',
+          platform: 'youtube',
+          thumbnail: 'https://img.youtube.com/vi/JRfuAukYTKg/hqdefault.jpg',
+          tags: ['Soccer', 'EDM'],
+          userName: 'FutbolEDM',
+          createdAt: new Date(Date.now() - 259200000).toISOString()
+        }
+      ];
+      this.saveVideos(demo);
+      return demo;
+    }
+  };
+
+  // URL Parser - Core function for YouTube/Vimeo
+  function parseVideoUrl(url) {
+    const ytRegex = /(?:youtube\.com\/(?:watch\?v=|embed\/|v\/|shorts\/)|youtu\.be\/)([\w-]{11})/;
+    const vimeoRegex = /vimeo\.com\/(\d+)/;
+    
+    const ytMatch = url.match(ytRegex);
+    if (ytMatch) {
+      return {
+        platform: 'youtube',
+        id: ytMatch[1],
+        thumbnail: `https://img.youtube.com/vi/${ytMatch[1]}/hqdefault.jpg`,
+        embed: `https://www.youtube.com/embed/${ytMatch[1]}?autoplay=1&rel=0`
+      };
+    }
+    
+    const vimeoMatch = url.match(vimeoRegex);
+    if (vimeoMatch) {
+      return {
+        platform: 'vimeo',
+        id: vimeoMatch[1],
+        thumbnail: `https://vumbnail.com/${vimeoMatch[1]}.jpg`,
+        embed: `https://player.vimeo.com/video/${vimeoMatch[1]}?autoplay=1`
+      };
+    }
+    
+    return null;
+  }
+
+  // DOM Elements
+  const $ = (id) => document.getElementById(id);
+  const videoUrl = $('videoUrl');
+  const urlStatus = $('urlStatus');
+  const urlError = $('urlError');
+  const previewContainer = $('previewContainer');
+  const videoPreview = $('videoPreview');
+  const submitForm = $('submitForm');
+  const videoGrid = $('videoGrid');
+  const videoModal = $('videoModal');
+  const modalPlayer = $('modalPlayer');
+  const sportsFilters = $('sportsFilters');
+  const musicFilters = $('musicFilters');
+
+  // Init
+  document.addEventListener('DOMContentLoaded', () => {
+    videos = storage.getVideos();
+    renderFilters();
+    renderVideos();
+    setupEventListeners();
+  });
+
+  function setupEventListeners() {
+    videoUrl.addEventListener('input', handleUrlInput);
+    submitForm.addEventListener('submit', handleSubmit);
+    $('mobileMenuBtn').addEventListener('click', () => {
+      $('mobileMenu').classList.toggle('hidden');
+    });
+    $('closeModal').addEventListener('click', closeModal);
+    videoModal.addEventListener('click', (e) => {
+      if (e.target === videoModal) closeModal();
+    });
+    $('clearFilters').addEventListener('click', clearFilters);
+    $('signInBtn').addEventListener('click', () => showToast('Auth coming soon - connect Supabase!', 'info'));
+    $('reportBtn').addEventListener('click', () => showToast('Report feature coming soon', 'info'));
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        e.preventDefault();
+        document.querySelector(a.getAttribute('href'))?.scrollIntoView({ behavior: 'smooth' });
+        $('mobileMenu')?.classList.add('hidden');
+      });
+    });
+  }
+
+  function handleUrlInput(e) {
+    const url = e.target.value.trim();
+    urlError.classList.add('hidden');
+    previewContainer.classList.add('hidden');
+    urlStatus.innerHTML = '';
+
+    if (!url) return;
+
+    const parsed = parseVideoUrl(url);
+    if (parsed) {
+      urlStatus.innerHTML = `<svg class="h-5 w-5 text-neon-green" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>`;
+      showPreview(parsed);
+    } else if (url.length > 10) {
+      urlStatus.innerHTML = `<svg class="h-5 w-5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/></svg>`;
+      urlError.textContent = 'Invalid YouTube or Vimeo URL';
+      urlError.classList.remove('hidden');
+    }
+  }
+
+  function showPreview(parsed) {
+    previewContainer.classList.remove('hidden');
+    if (parsed.platform === 'youtube') {
+      videoPreview.innerHTML = `<img src="${parsed.thumbnail}" alt="Preview" class="w-full h-full object-cover">`;
+    } else {
+      videoPreview.innerHTML = `<img src="${parsed.thumbnail}" alt="Preview" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/480x360/1A1A26/00F5FF?text=Vimeo+Video'">`;
+    }
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    const url = videoUrl.value.trim();
+    const title = $('videoTitle').value.trim();
+    const parsed = parseVideoUrl(url);
+
+    if (!parsed) {
+      showToast('Please enter a valid YouTube or Vimeo URL', 'error');
+      return;
+    }
+    if (!title) {
+      showToast('Title is required', 'error');
+      return;
+    }
+
+    const tags = $('videoTags').value.split(',').map(t => t.trim()).filter(Boolean);
+    const video = {
+      title,
+      description: $('videoDesc').value.trim(),
+      videoUrl: url,
+      videoId: parsed.id,
+      platform: parsed.platform,
+      thumbnail: parsed.thumbnail,
+      tags,
+      userName: $('userName').value.trim() || 'Anonymous'
+    };
+
+    storage.addVideo(video);
+    showToast('Video posted successfully!', 'success');
+    submitForm.reset();
+    previewContainer.classList.add('hidden');
+    urlStatus.innerHTML = '';
+    renderVideos();
+    document.querySelector('#feed').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  function renderFilters() {
+    sportsFilters.innerHTML = SPORTS_TAGS.map(tag => createFilterBtn(tag, 'sports')).join('');
+    musicFilters.innerHTML = MUSIC_TAGS.map(tag => createFilterBtn(tag, 'music')).join('');
+  }
+
+  function createFilterBtn(tag, type) {
+    const active = activeFilters[type].includes(tag);
+    return `<button 
+      onclick="toggleFilter('${type}', '${tag}')"
+      class="px-3 py-1.5 rounded-lg text-xs font-medium transition ${active 
+        ? 'bg-gradient-to-r from-neon-cyan to-neon-green text-dark-900' 
+        : 'glass hover:bg-dark-700'}"
+    >${tag}</button>`;
+  }
+
+  window.toggleFilter = (type, tag) => {
+    const arr = activeFilters[type];
+    const idx = arr.indexOf(tag);
+    if (idx > -1) arr.splice(idx, 1);
+    else arr.push(tag);
+    renderFilters();
+    renderVideos();
+  };
+
+  function clearFilters() {
+    activeFilters = { sports: [], music: [] };
+    renderFilters();
+    renderVideos();
+  }
+
+  function renderVideos() {
+    const filtered = videos.filter(v => {
+      const hasSports = activeFilters.sports.length === 0 || v.tags.some(t => activeFilters.sports.includes(t));
+      const hasMusic = activeFilters.music.length === 0 || v.tags.some(t => activeFilters.music.includes(t));
+      return hasSports && hasMusic;
+    });
+
+    $('videoCount').textContent = `${filtered.length} ${filtered.length === 1 ? 'video' : 'videos'}`;
+    
+    if (filtered.length === 0) {
+      videoGrid.innerHTML = '';
+      $('emptyState').classList.remove('hidden');
+      return;
+    }
+    
+    $('emptyState').classList.add('hidden');
+    videoGrid.innerHTML = filtered.map(video => `
+      <div class="glass rounded-2xl overflow-hidden hover:scale-[1.02] transition duration-300 cursor-pointer group" onclick="openVideo(${video.id})">
+        <div class="relative aspect-video bg-dark-900 overflow-hidden">
+          <img src="${video.thumbnail}" alt="${video.title}" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" 
+               onerror="this.src='https://via.placeholder.com/640x360/1A1A26/00F5FF?text=MusicNSports'">
+          <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-transparent to-transparent opacity-60"></div>
+          <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+            <div class="w-16 h-16 rounded-full bg-neon-cyan/20 backdrop-blur-sm flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-neon-cyan" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </div>
+          </div>
+          <div class="absolute top-3 left-3 px-2 py-1 rounded-md bg-dark-900/80 backdrop-blur-sm text-xs font-medium">
+            ${video.platform === 'youtube' ? 'YouTube' : 'Vimeo'}
+          </div>
+        </div>
+        <div class="p-5">
+          <h3 class="font-semibold text-lg mb-2 line-clamp-2">${video.title}</h3>
+          <div class="flex items-center gap-2 mb-3 text-xs text-gray-500">
+            <span>${video.userName}</span>
+            <span>•</span>
+            <span>${formatDate(video.createdAt)}</span>
+          </div>
+          <div class="flex flex-wrap gap-1.5">
+            ${video.tags.slice(0, 4).map(tag => `
+              <span class="px-2 py-1 rounded-md bg-dark-700 text-xs text-gray-400">${tag}</span>
+            `).join('')}
+          </div>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  window.openVideo = (id) => {
+    const video = videos.find(v => v.id === id);
+    if (!video) return;
+    
+    const embedUrl = video.platform === 'youtube' 
+      ? `https://www.youtube.com/embed/${video.videoId}?autoplay=1&rel=0`
+      : `https://player.vimeo.com/video/${video.videoId}?autoplay=1`;
+    
+    modalPlayer.innerHTML = `<iframe src="${embedUrl}" class="w-full h-full" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+    $('modalTitle').textContent = video.title;
+    $('modalDesc').textContent = video.description || 'No description';
+    $('modalTags').innerHTML = video.tags.map(tag => 
+      `<span class="px-3 py-1.5 rounded-lg glass text-xs">${tag}</span>`
+    ).join('');
+    videoModal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  };
+
+  function closeModal() {
+    videoModal.classList.add('hidden');
+    modalPlayer.innerHTML = '';
+    document.body.style.overflow = '';
+  }
+
+  function formatDate(dateStr) {
+    const date = new Date(dateStr);
+    const now = new Date();
+    const diff = now - date;
+    const days = Math.floor(diff / 86400000);
+    if (days === 0) return 'Today';
+    if (days === 1) return 'Yesterday';
+    if (days < 7) return `${days}d ago`;
+    return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+  }
+
+  function showToast(message, type = 'success') {
+    const toast = $('toast');
+    const icon = $('toastIcon');
+    const icons = {
+      success: '<svg class="h-5 w-5 text-neon-green" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>',
+      error: '<svg class="h-5 w-5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/></svg>',
+      info: '<svg class="h-5 w-5 text-neon-cyan" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/></svg>'
+    };
+    icon.innerHTML = icons[type];
+    $('toastMessage').textContent = message;
+    toast.classList.remove('translate-y-20', 'opacity-0');
+    setTimeout(() => {
+      toast.classList.add('translate-y-20', 'opacity-0');
+    }, 3000);
+  }
+
+  // Handle details chevron rotation
+  document.querySelector('details').addEventListener('toggle', (e) => {
+    $('chevron').style.transform = e.target.open ? 'rotate(180deg)' : 'rotate(0deg)';
+  });
+</script>
+
+<script>(function(){document.addEventListener("click",function(e){var a=e.target.closest("[data-product-id]");if(!a)return;e.preventDefault();var pid=a.getAttribute("data-product-id");if(pid)parent.postMessage({type:"ecto-artifact-link-click",productId:pid},"*")})})();</script>
+</body>
+</html>
