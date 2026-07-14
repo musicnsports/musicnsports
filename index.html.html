@@ -1,84 +1,75 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MusicNSports - Where Beats Meet Highlights</title>
-<meta name="description" content="Post music videos with sports visuals. Share your best NBA, NFL, Soccer highlights with Hip-Hop, Rock, EDM beats.">
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          neon: {
-            cyan: '#00F5FF',
-            green: '#39FF14',
-            purple: '#B026FF'
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MusicNSports - Where Beats Meet Highlights</title>
+  <meta name="description" content="Post music videos with sports visuals. Share your best NBA, NFL, Soccer highlights with Hip-Hop, Rock, EDM beats.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            neon: { cyan: '#00F5FF', green: '#39FF14', purple: '#B026FF' },
+            dark: { 900: '#0A0A0F', 800: '#12121A', 700: '#1A1A26', 600: '#252533' }
           },
-          dark: {
-            900: '#0A0A0F',
-            800: '#12121A',
-            700: '#1A1A26',
-            600: '#252533'
-          }
-        },
-        fontFamily: {
-          sans: ['Inter', 'system-ui', 'sans-serif'],
-          display: ['Outfit', 'sans-serif']
-        },
-        animation: {
-          'pulse-glow': 'pulseGlow 2s ease-in-out infinite alternate',
-          'slide-up': 'slideUp 0.4s ease-out',
-          'fade-in': 'fadeIn 0.3s ease-out'
-        },
-        keyframes: {
-          pulseGlow: {
-            '0%': { boxShadow: '0 0 5px #00F5FF, 0 0 10px #00F5FF' },
-            '100%': { boxShadow: '0 0 20px #00F5FF, 0 0 30px #00F5FF' }
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            display: ['Outfit', 'sans-serif']
           },
-          slideUp: {
-            '0%': { transform: 'translateY(20px)', opacity: '0' },
-            '100%': { transform: 'translateY(0)', opacity: '1' }
+          animation: {
+            'pulse-glow': 'pulseGlow 2s ease-in-out infinite alternate',
+            'slide-up': 'slideUp 0.4s ease-out',
+            'fade-in': 'fadeIn 0.3s ease-out'
           },
-          fadeIn: {
-            '0%': { opacity: '0' },
-            '100%': { opacity: '1' }
+          keyframes: {
+            pulseGlow: {
+              '0%': { boxShadow: '0 0 5px #00F5FF, 0 0 10px #00F5FF' },
+              '100%': { boxShadow: '0 0 20px #00F5FF, 0 0 30px #00F5FF' }
+            },
+            slideUp: {
+              '0%': { transform: 'translateY(20px)', opacity: '0' },
+              '100%': { transform: 'translateY(0)', opacity: '1' }
+            },
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' }
+            }
           }
         }
       }
     }
-  }
-</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
-<style>
-  body {
-    background: radial-gradient(ellipse at top, #12121A 0%, #0A0A0F 100%);
-    min-height: 100vh;
-  }
- .glass {
-    background: rgba(26, 26, 38, 0.6);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-  }
- .text-glow {
-    text-shadow: 0 0 20px rgba(0, 245, 255, 0.5);
-  }
- .btn-glow:hover {
-    box-shadow: 0 0 20px rgba(0, 245, 255, 0.4), 0 0 40px rgba(57, 255, 20, 0.2);
-  }
- .scrollbar-hide::-webkit-scrollbar { display: none; }
- .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
- .line-clamp-2 {
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-</style>
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: radial-gradient(ellipse at top, #12121A 0%, #0A0A0F 100%);
+      min-height: 100vh;
+    }
+    .glass {
+      background: rgba(26, 26, 38, 0.6);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .text-glow {
+      text-shadow: 0 0 20px rgba(0, 245, 255, 0.5);
+    }
+    .btn-glow:hover {
+      box-shadow: 0 0 20px rgba(0, 245, 255, 0.4), 0 0 40px rgba(57, 255, 20, 0.2);
+    }
+    .scrollbar-hide::-webkit-scrollbar { display: none; }
+    .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+    .line-clamp-2 {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  </style>
 </head>
 <body class="text-gray-100 font-sans antialiased">
   <!-- Header -->
@@ -101,6 +92,533 @@
   </header>
 
   <main id="mainContent" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <!-- Content injected via JS -->
+  </main>
+
+  <!-- Modals Container -->
+  <div id="modalContainer"></div>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/5 py-8 text-center text-gray-500 text-sm">
+    <p>© 2026 MusicNSports. Built for the culture.</p>
+  </footer>
+
+  <!-- Developer Guide -->
+  <details class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+    <summary class="cursor-pointer text-gray-500 hover:text-gray-300 text-sm">Developer Guide: Upgrade to Supabase</summary>
+    <div class="glass rounded-xl p-6 mt-4 text-sm text-gray-300 space-y-4">
+      <p><strong class="text-neon-cyan">Current:</strong> All data in localStorage. Auth, posts, likes, comments, follows work client-side only.</p>
+      <p><strong class="text-neon-green">Supabase Upgrade Path:</strong></p>
+      <pre class="bg-dark-900 p-4 rounded-lg overflow-x-auto text-xs"><code>-- profiles table
+create table profiles (
+  id uuid references auth.users primary key,
+  username text unique not null,
+  bio text,
+  avatar_url text,
+  created_at timestamp with time zone default now()
+);
+alter table profiles enable row level security;
+create policy "Public profiles visible" on profiles for select using (true);
+create policy "Users can update own" on profiles for update using (auth.uid() = id);
+
+-- posts, likes, comments, follows tables follow same pattern
+-- Replace localStorage calls with: supabase.from('posts').select()</code></pre>
+      <p>Swap <code>localStorage.getItem()</code> → <code>supabase.from('table').select()</code>. Auth: <code>supabase.auth.signUp()</code>, <code>signInWithPassword()</code>. RLS ensures users only edit their own data.</p>
+    </div>
+  </details>
+
+<script>
+// ===== APP STATE =====
+let currentUser = JSON.parse(localStorage.getItem('mns_user') || 'null');
+let users = JSON.parse(localStorage.getItem('mns_users') || '{}');
+let posts = JSON.parse(localStorage.getItem('mns_posts') || '[]');
+let likes = JSON.parse(localStorage.getItem('mns_likes') || '{}');
+let comments = JSON.parse(localStorage.getItem('mns_comments') || '{}');
+let follows = JSON.parse(localStorage.getItem('mns_follows') || '{}');
+
+// ===== UTILS =====
+const $ = sel => document.querySelector(sel);
+const $$ = sel => document.querySelectorAll(sel);
+const hash = str => btoa(str).slice(0, 24);
+const uid = () => crypto.randomUUID();
+const timeAgo = ts => {
+  const s = Math.floor((Date.now() - ts) / 1000);
+  if (s < 60) return `${s}s ago`;
+  const m = Math.floor(s / 60); if (m < 60) return `${m}m ago`;
+  const h = Math.floor(m / 60); if (h < 24) return `${h}h ago`;
+  const d = Math.floor(h / 24); return `${d}d ago`;
+};
+const getYouTubeId = url => {
+  const m = url.match(/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/);
+  return m ? m[1] : null;
+};
+const getVimeoId = url => {
+  const m = url.match(/vimeo\.com\/(\d+)/);
+  return m ? m[1] : null;
+};
+const getVideoId = url => getYouTubeId(url) || getVimeoId(url);
+
+// ===== RENDER AUTH HEADER =====
+function renderAuth() {
+  const el = $('#authSection');
+  if (currentUser) {
+    const u = users[currentUser.id];
+    el.innerHTML = `
+      <div class="flex items-center gap-3">
+        <button onclick="showProfile('${u.id}')" class="flex items-center gap-2 hover:bg-white/5 rounded-lg px-3 py-2 transition">
+          <img src="${u.avatar}" class="w-8 h-8 rounded-full">
+          <span class="font-semibold hidden sm:block">@${u.username}</span>
+        </button>
+        <button onclick="logout()" class="text-gray-400 hover:text-white text-sm">Logout</button>
+      </div>`;
+  } else {
+    el.innerHTML = `
+      <button onclick="showLogin()" class="px-4 py-2 text-gray-300 hover:text-white transition">Login</button>
+      <button onclick="showSignup()" class="px-4 py-2 bg-neon-cyan text-dark-900 font-semibold rounded-lg btn-glow transition">Sign Up</button>`;
+  }
+}
+
+// ===== RENDER FEED =====
+function renderFeed() {
+  const grid = $('#videoGrid');
+  if (!grid) return;
+  const search = $('#searchInput')?.value.toLowerCase() || '';
+  const sport = $('#sportFilter')?.value || 'all';
+  const music = $('#musicFilter')?.value || 'all';
+  const sort = $('#sortFilter')?.value || 'newest';
+
+  let filtered = posts.filter(p => {
+    const matchSearch = !search || p.title.toLowerCase().includes(search) || p.description.toLowerCase().includes(search) || users[p.userId]?.username.toLowerCase().includes(search);
+    const matchSport = sport === 'all' || p.sport === sport;
+    const matchMusic = music === 'all' || p.music === music;
+    return matchSearch && matchSport && matchMusic;
+  });
+
+  if (sort === 'likes') {
+    filtered.sort((a, b) => (Object.keys(likes[b.id] || {}).length) - (Object.keys(likes[a.id] || {}).length));
+  } else if (sort === 'comments') {
+    filtered.sort((a, b) => (comments[b.id]?.length || 0) - (comments[a.id]?.length || 0));
+  } else {
+    filtered.sort((a, b) => b.createdAt - a.createdAt);
+  }
+
+  if (filtered.length === 0) {
+    grid.innerHTML = `<div class="col-span-full text-center py-20 text-gray-500">No posts found. Be the first to post!</div>`;
+    return;
+  }
+
+  grid.innerHTML = filtered.map(p => {
+    const u = users[p.userId];
+    const likeCount = Object.keys(likes[p.id] || {}).length;
+    const commentCount = comments[p.id]?.length || 0;
+    const isLiked = currentUser && likes[p.id]?.[currentUser.id];
+    return `
+    <article class="glass rounded-2xl overflow-hidden hover:scale-[1.02] transition-all duration-300 animate-fade-in">
+      <div class="aspect-video bg-dark-800 relative cursor-pointer" onclick="showVideo('${p.id}')">
+        <img src="${p.thumbnail}" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-dark-900/80 to-transparent"></div>
+        <div class="absolute bottom-3 left-3 flex gap-2">
+          <span class="px-2 py-1 bg-neon-cyan/20 border border-neon-cyan/40 rounded text-xs font-semibold">${p.sport}</span>
+          <span class="px-2 py-1 bg-neon-purple/20 border border-neon-purple/40 rounded text-xs font-semibold">${p.music}</span>
+        </div>
+      </div>
+      <div class="p-4">
+        <h3 class="font-bold text-lg mb-1 line-clamp-2">${p.title}</h3>
+        <p class="text-gray-400 text-sm mb-3 line-clamp-2">${p.description}</p>
+        <div class="flex items-center justify-between">
+          <button onclick="event.stopPropagation(); showProfile('${u.id}')" class="flex items-center gap-2 hover:opacity-80">
+            <img src="${u.avatar}" class="w-7 h-7 rounded-full">
+            <span class="text-sm text-gray-300">@${u.username}</span>
+          </button>
+          <div class="flex items-center gap-4 text-sm text-gray-400">
+            <button onclick="event.stopPropagation(); toggleLike('${p.id}')" class="flex items-center gap-1 hover:text-neon-green transition ${isLiked ? 'text-neon-green' : ''}">
+              <svg class="w-5 h-5 ${isLiked ? 'fill-current' : ''}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 0 00-6.364 0z"></path></svg>
+              ${likeCount}
+            </button>
+            <span class="flex items-center gap-1">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+              ${commentCount}
+            </span>
+          </div>
+        </div>
+      </div>
+    </article>`;
+  }).join('');
+}
+
+// ===== AUTH MODALS =====
+function showSignup() {
+  showModal(`
+    <h3 class="font-display font-bold text-2xl mb-6">Create Account</h3>
+    <form onsubmit="handleSignup(event)" class="space-y-4">
+      <input id="su_email" type="email" placeholder="Email" required class="w-full bg-dark-700 border border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-neon-cyan">
+      <input id="su_username" type="text" placeholder="Username" required class="w-full bg-dark-700 border border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-neon-cyan">
+      <input id="su_password" type="password" placeholder="Password" required class="w-full bg-dark-700 border border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-neon-cyan">
+      <button class="w-full py-3 bg-gradient-to-r from-neon-cyan to-neon-green text-dark-900 font-bold rounded-lg btn-glow">Sign Up</button>
+      <p class="text-center text-gray-400 text-sm">Already have an account? <button type="button" onclick="closeModal(); showLogin()" class="text-neon-cyan hover:underline">Login</button></p>
+    </form>`);
+}
+
+function handleSignup(e) {
+  e.preventDefault();
+  const email = $('#su_email').value.trim();
+  const username = $('#su_username').value.trim();
+  const password = $('#su_password').value;
+
+  if (Object.values(users).some(u => u.email === email)) return alert('Email already used');
+  if (Object.values(users).some(u => u.username === username)) return alert('Username taken');
+
+  const id = uid();
+  users[id] = {
+    id, email, username,
+    passwordHash: hash(password),
+    bio: '',
+    avatar: `https://api.dicebear.com/7.x/thumbs/svg?seed=${username}`,
+    createdAt: Date.now()
+  };
+  currentUser = { id, username };
+  localStorage.setItem('mns_users', JSON.stringify(users));
+  localStorage.setItem('mns_user', JSON.stringify(currentUser));
+  closeModal();
+  renderAuth();
+  renderFeed();
+}
+
+function showLogin() {
+  showModal(`
+    <h3 class="font-display font-bold text-2xl mb-6">Welcome Back</h3>
+    <form onsubmit="handleLogin(event)" class="space-y-4">
+      <input id="li_email" type="email" placeholder="Email" required class="w-full bg-dark-700 border border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-neon-cyan">
+      <input id="li_password" type="password" placeholder="Password" required class="w-full bg-dark-700 border border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-neon-cyan">
+      <button class="w-full py-3 bg-gradient-to-r from-neon-cyan to-neon-green text-dark-900 font-bold rounded-lg btn-glow">Login</button>
+      <p class="text-center text-gray-400 text-sm">No account? <button type="button" onclick="closeModal(); showSignup()" class="text-neon-cyan hover:underline">Sign Up</button></p>
+    </form>`);
+}
+
+function handleLogin(e) {
+  e.preventDefault();
+  const email = $('#li_email').value.trim();
+  const password = $('#li_password').value;
+  const user = Object.values(users).find(u => u.email === email);
+  if (!user || user.passwordHash !== hash(password)) return alert('Invalid credentials');
+  currentUser = { id: user.id, username: user.username };
+  localStorage.setItem('mns_user', JSON.stringify(currentUser));
+  closeModal();
+  renderAuth();
+  renderFeed();
+}
+
+function logout() {
+  currentUser = null;
+  localStorage.removeItem('mns_user');
+  renderAuth();
+  showMain();
+}
+
+// ===== PROFILE =====
+function showProfile(userId) {
+  const u = users[userId];
+  if (!u) return;
+  const userPosts = posts.filter(p => p.userId === userId);
+  const followerCount = Object.values(follows).filter(f => f.following === userId).length;
+  const followingCount = Object.keys(follows[currentUser?.id] || {}).length;
+  const isFollowing = currentUser && follows[currentUser.id]?.[userId];
+  const isOwn = currentUser?.id === userId;
+
+  $('#mainContent').innerHTML = `
+    <div class="max-w-4xl mx-auto">
+      <button onclick="showMain()" class="mb-6 text-gray-400 hover:text-white flex items-center gap-2">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+        Back to Feed
+      </button>
+      <div class="glass rounded-2xl p-8 mb-8">
+        <div class="flex flex-col md:flex-row gap-6 items-start">
+          <img src="${u.avatar}" class="w-24 h-24 rounded-full border-4 border-neon-cyan/30">
+          <div class="flex-1">
+            <div class="flex items-center gap-4 mb-2">
+              <h2 class="font-display font-bold text-3xl">@${u.username}</h2>
+              ${currentUser && !isOwn ? `<button onclick="toggleFollow('${userId}')" class="px-4 py-2 ${isFollowing ? 'bg-dark-600' : 'bg-neon-cyan text-dark-900'} font-semibold rounded-lg text-sm">${isFollowing ? 'Unfollow' : 'Follow'}</button>` : ''}
+              ${isOwn ? `<button onclick="showEditProfile()" class="px-4 py-2 bg-dark-600 rounded-lg text-sm">Edit Profile</button>` : ''}
+            </div>
+            <p class="text-gray-400 mb-4">${u.bio || 'No bio yet.'}</p>
+            <div class="flex gap-6 text-sm">
+              <span><strong class="text-white">${userPosts.length}</strong> <span class="text-gray-400">Posts</span></span>
+              <button onclick="showFollowList('${userId}', 'followers')" class="hover:text-neon-cyan"><strong class="text-white">${followerCount}</strong> <span class="text-gray-400">Followers</span></button>
+              <button onclick="showFollowList('${userId}', 'following')" class="hover:text-neon-cyan"><strong class="text-white">${followingCount}</strong> <span class="text-gray-400">Following</span></button>
+            </div>
+          </div>
+        </div>
+      ${isOwn ? `
+      <div class="mb-6">
+        <div class="flex gap-2 border-b border-white/10">
+          <button onclick="showProfileTab('posts')" id="tab-posts" class="px-4 py-2 border-b-2 border-neon-cyan text-neon-cyan font-semibold">My Posts</button>
+          <button onclick="showProfileTab('liked')" id="tab-liked" class="px-4 py-2 border-b-2 border-transparent text-gray-400 hover:text-white">Liked</button>
+        </div>
+      </div>` : ''}
+      <div id="profileGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    </div>`;
+
+  if (isOwn) {
+    showProfileTab('posts');
+  } else {
+    $('#profileGrid').innerHTML = userPosts.map(p => renderPostCard(p)).join('') || '<p class="col-span-full text-center text-gray-500 py-20">No posts yet.</p>';
+  }
+}
+
+function showProfileTab(tab) {
+  $$('#tab-posts, #tab-liked').forEach(t => {
+    t.classList.remove('border-neon-cyan', 'text-neon-cyan');
+    t.classList.add('border-transparent', 'text-gray-400');
+  });
+  const activeTab = $(`#tab-${tab}`);
+  if (activeTab) {
+    activeTab.classList.add('border-neon-cyan', 'text-neon-cyan');
+    activeTab.classList.remove('border-transparent', 'text-gray-400');
+  }
+
+  if (tab === 'posts') {
+    const userPosts = posts.filter(p => p.userId === currentUser.id);
+    $('#profileGrid').innerHTML = userPosts.map(p => renderPostCard(p, true)).join('') || '<p class="col-span-full text-center text-gray-500 py-20">No posts yet.</p>';
+  } else {
+    const likedPosts = posts.filter(p => likes[p.id]?.[currentUser.id]);
+    $('#profileGrid').innerHTML = likedPosts.map(p => renderPostCard(p)).join('') || '<p class="col-span-full text-center text-gray-500 py-20">No liked videos yet.</p>';
+  }
+}
+
+function renderPostCard(p, showDelete = false) {
+  const u = users[p.userId];
+  const likeCount = Object.keys(likes[p.id] || {}).length;
+  return `
+  <article class="glass rounded-2xl overflow-hidden">
+    <div class="aspect-video bg-dark-800 relative cursor-pointer" onclick="showVideo('${p.id}')">
+      <img src="${p.thumbnail}" class="w-full h-full object-cover">
+      ${showDelete ? `<button onclick="event.stopPropagation(); deletePost('${p.id}')" class="absolute top-2 right-2 p-2 bg-red-500/80 rounded-lg hover:bg-red-500"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg></button>` : ''}
+    </div>
+    <div class="p-4">
+      <h3 class="font-bold mb-1 line-clamp-2">${p.title}</h3>
+      <div class="flex items-center justify-between text-sm text-gray-400">
+        <span>${timeAgo(p.createdAt)}</span>
+        <span class="flex items-center gap-1"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path></svg>${likeCount}</span>
+      </div>
+    </div>
+  </article>`;
+}
+
+function deletePost(postId) {
+  if (!confirm('Delete this post?')) return;
+  posts = posts.filter(p => p.id !== postId);
+  delete likes[postId];
+  delete comments[postId];
+  localStorage.setItem('mns_posts', JSON.stringify(posts));
+  localStorage.setItem('mns_likes', JSON.stringify(likes));
+  localStorage.setItem('mns_comments', JSON.stringify(comments));
+  showProfile(currentUser.id);
+}
+
+function showEditProfile() {
+  const u = users[currentUser.id];
+  showModal(`
+    <h3 class="font-display font-bold text-2xl mb-6">Edit Profile</h3>
+    <form onsubmit="handleEditProfile(event)" class="space-y-4">
+      <div>
+        <label class="block text-sm text-gray-400 mb-2">Bio</label>
+        <textarea id="edit_bio" rows="3" class="w-full bg-dark-700 border border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-neon-cyan" placeholder="Tell us about your edits...">${u.bio}</textarea>
+      </div>
+      <div>
+        <label class="block text-sm text-gray-400 mb-2">Avatar URL</label>
+        <input id="edit_avatar" type="url" value="${u.avatar}" class="w-full bg-dark-700 border border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-neon-cyan">
+      </div>
+      <button class="w-full py-3 bg-gradient-to-r from-neon-cyan to-neon-green text-dark-900 font-bold rounded-lg btn-glow">Save Profile</button>
+    </form>
+  `);
+}
+
+function handleEditProfile(e) {
+  e.preventDefault();
+  const bio = $('#edit_bio').value.trim();
+  const avatar = $('#edit_avatar').value.trim();
+  users[currentUser.id].bio = bio;
+  users[currentUser.id].avatar = avatar || `https://api.dicebear.com/7.x/thumbs/svg?seed=${users[currentUser.id].username}`;
+  localStorage.setItem('mns_users', JSON.stringify(users));
+  closeModal();
+  showProfile(currentUser.id);
+  renderAuth();
+}
+
+function toggleFollow(userId) {
+  if (!currentUser) return showLogin();
+  if (!follows[currentUser.id]) follows[currentUser.id] = {};
+  if (follows[currentUser.id][userId]) {
+    delete follows[currentUser.id][userId];
+  } else {
+    follows[currentUser.id][userId] = true;
+  }
+  localStorage.setItem('mns_follows', JSON.stringify(follows));
+  showProfile(userId);
+}
+
+function showFollowList(userId, type) {
+  showModal(`<h3 class="font-display font-bold text-2xl mb-6">${type === 'followers' ? 'Followers' : 'Following'}</h3><p class="text-gray-400">Follow list feature coming soon!</p>`);
+}
+
+// ===== UPLOAD MODAL =====
+function openUploadModal() {
+  if (!currentUser) return showLogin();
+  showModal(`
+    <h3 class="font-display font-bold text-2xl mb-6">Post Your Mix</h3>
+    <form onsubmit="handleUpload(event)" class="space-y-4">
+      <input id="up_title" type="text" placeholder="Title (e.g., Jordan Dunk on EDM Beat)" required class="w-full bg-dark-700 border border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-neon-cyan">
+      <input id="up_url" type="url" placeholder="YouTube or Vimeo URL" required class="w-full bg-dark-700 border border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-neon-cyan">
+      <select id="up_sport" required class="w-full bg-dark-700 border border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-neon-cyan">
+        <option value="">Select Sport</option>
+        <option value="NBA">NBA</option>
+        <option value="NFL">NFL</option>
+        <option value="Soccer">Soccer</option>
+        <option value="UFC">UFC</option>
+        <option value="Other">Other</option>
+      </select>
+      <select id="up_music" required class="w-full bg-dark-700 border border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-neon-cyan">
+        <option value="">Select Music Genre</option>
+        <option value="Hip-Hop">Hip-Hop</option>
+        <option value="Rock">Rock</option>
+        <option value="EDM">EDM</option>
+        <option value="Pop">Pop</option>
+        <option value="Other">Other</option>
+      </select>
+      <textarea id="up_desc" rows="3" placeholder="Description..." class="w-full bg-dark-700 border border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-neon-cyan"></textarea>
+      <button class="w-full py-3 bg-gradient-to-r from-neon-cyan to-neon-green text-dark-900 font-bold rounded-lg btn-glow">Post Mix</button>
+    </form>
+  `);
+}
+
+function handleUpload(e) {
+  e.preventDefault();
+  const title = $('#up_title').value.trim();
+  const url = $('#up_url').value.trim();
+  const sport = $('#up_sport').value;
+  const music = $('#up_music').value;
+  const description = $('#up_desc').value.trim();
+  
+  const videoId = getVideoId(url);
+  if (!videoId) return alert('Invalid YouTube or Vimeo URL');
+  
+  if (posts.some(p => p.videoId === videoId)) return alert('This video has already been posted!');
+  
+  const isYt = getYouTubeId(url);
+  const thumbnail = isYt ? `https://img.youtube.com/vi/${videoId}/mqdefault.jpg` : 'https://via.placeholder.com/320x180?text=Vimeo+Video';
+  
+  const newPost = {
+    id: uid(),
+    userId: currentUser.id,
+    title,
+    url,
+    videoId,
+    sport,
+    music,
+    description,
+    thumbnail,
+    createdAt: Date.now()
+  };
+  
+  posts.unshift(newPost);
+  localStorage.setItem('mns_posts', JSON.stringify(posts));
+  closeModal();
+  showMain();
+}
+
+// ===== VIDEO MODAL =====
+function showVideo(postId) {
+  const p = posts.find(x => x.id === postId);
+  if (!p) return;
+  const u = users[p.userId];
+  const isYt = getYouTubeId(p.url);
+  const embedUrl = isYt ? `https://www.youtube.com/embed/${p.videoId}?autoplay=1` : `https://player.vimeo.com/video/${p.videoId}?autoplay=1`;
+  
+  showModal(`
+    <div class="relative">
+      <div class="aspect-video bg-black rounded-xl overflow-hidden mb-4">
+        <iframe src="${embedUrl}" class="w-full h-full" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+      </div>
+      <h3 class="font-bold text-xl mb-2">${p.title}</h3>
+      <div class="flex items-center gap-3 mb-4">
+        <img src="${u.avatar}" class="w-8 h-8 rounded-full">
+        <span class="text-gray-300">@${u.username}</span>
+        <span class="text-gray-500 text-sm">${timeAgo(p.createdAt)}</span>
+      </div>
+      <p class="text-gray-400 mb-4">${p.description}</p>
+      <div class="flex gap-2 mb-6">
+        <span class="px-3 py-1 bg-neon-cyan/20 border border-neon-cyan/40 rounded text-xs font-semibold">${p.sport}</span>
+        <span class="px-3 py-1 bg-neon-purple/20 border border-neon-purple/40 rounded text-xs font-semibold">${p.music}</span>
+      </div>
+      
+      <div class="border-t border-white/10 pt-4">
+        <h4 class="font-semibold mb-3">Comments</h4>
+        <div id="commentsList" class="space-y-3 mb-4 max-h-60 overflow-y-auto scrollbar-hide">
+          ${(comments[p.id] || []).map(c => {
+            const cu = users[c.userId];
+            return `<div class="flex gap-3"><img src="${cu?.avatar || ''}" class="w-8 h-8 rounded-full"><div><div class="text-sm font-semibold">@${cu?.username || 'Unknown'}</div><div class="text-sm text-gray-300">${c.text}</div></div></div>`;
+          }).join('') || '<p class="text-gray-500 text-sm">No comments yet.</p>'}
+        </div>
+        ${currentUser ? `
+        <form onsubmit="handleComment(event, '${p.id}')" class="flex gap-2">
+          <input id="commentInput" type="text" placeholder="Add a comment..." required class="flex-1 bg-dark-700 border border-white/10 rounded-lg px-4 py-2 focus:outline-none focus:border-neon-cyan">
+          <button type="submit" class="px-4 py-2 bg-neon-cyan text-dark-900 font-semibold rounded-lg">Post</button>
+        </form>` : '<p class="text-sm text-gray-500">Login to comment</p>'}
+      </div>
+    </div>
+  `, true);
+}
+
+function handleComment(e, postId) {
+  e.preventDefault();
+  const text = $('#commentInput').value.trim();
+  if (!text) return;
+  if (!comments[postId]) comments[postId] = [];
+  comments[postId].push({
+    id: uid(),
+    userId: currentUser.id,
+    text,
+    createdAt: Date.now()
+  });
+  localStorage.setItem('mns_comments', JSON.stringify(comments));
+  showVideo(postId);
+}
+
+// ===== LIKES =====
+function toggleLike(postId) {
+  if (!currentUser) return showLogin();
+  if (!likes[postId]) likes[postId] = {};
+  if (likes[postId][currentUser.id]) {
+    delete likes[postId][currentUser.id];
+  } else {
+    likes[postId][currentUser.id] = true;
+  }
+  localStorage.setItem('mns_likes', JSON.stringify(likes));
+  renderFeed();
+}
+
+// ===== MODAL SYSTEM =====
+function showModal(content, isWide = false) {
+  const container = $('#modalContainer');
+  container.innerHTML = `
+    <div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-fade-in" onclick="if(event.target===this) closeModal()">
+      <div class="glass rounded-2xl p-6 w-full ${isWide ? 'max-w-3xl' : 'max-w-md'} relative animate-slide-up">
+        <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+        ${content}
+      </div>
+    </div>
+  `;
+}
+
+function closeModal() {
+  $('#modalContainer').innerHTML = '';
+}
+
+// ===== NAVIGATION =====
+function showMain() {
+  $('#mainContent').innerHTML = `
     <!-- Hero -->
     <section class="text-center mb-12 animate-slide-up">
       <h2 class="font-display font-black text-4xl md:text-6xl mb-4 bg-gradient-to-r from-neon-cyan via-neon-green to-neon-purple bg-clip-text text-transparent">
@@ -109,7 +627,7 @@
       <p class="text-gray-400 text-lg max-w-2xl mx-auto mb-8">
         Post your fire sports edits. Match NBA dunks with Hip-Hop. UFC KOs with EDM. Soccer bangers with Rock.
       </p>
-      <button id="uploadBtn" class="px-8 py-4 bg-gradient-to-r from-neon-cyan to-neon-green text-dark-900 font-bold rounded-xl btn-glow transition-all hover:scale-105">
+      <button id="uploadBtn" class="px-8 py-4 bg-gradient-to-r from-neon-cyan to-neon-green text-dark-900 font-bold rounded-xl btn-glow transition-all hover:scale-105 ${!currentUser ? 'hidden' : ''}">
         Post Your Mix
       </button>
     </section>
@@ -178,344 +696,55 @@
         </div>
       </div>
     </section>
-  </main>
-
-  <!-- Modals Container -->
-  <div id="modalContainer"></div>
-
-  <!-- Footer -->
-  <footer class="border-t border-white/5 py-8 text-center text-gray-500 text-sm">
-    <p>© 2026 MusicNSports. Built for the culture.</p>
-  </footer>
-
-  <!-- Developer Guide -->
-  <details class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
-    <summary class="cursor-pointer text-gray-500 hover:text-gray-300 text-sm">Developer Guide: Upgrade to Supabase</summary>
-    <div class="glass rounded-xl p-6 mt-4 text-sm text-gray-300 space-y-4">
-      <p><strong class="text-neon-cyan">Current:</strong> All data in localStorage. Auth, posts, likes, comments, follows work client-side only.</p>
-      <p><strong class="text-neon-green">Supabase Upgrade Path:</strong></p>
-      <pre class="bg-dark-900 p-4 rounded-lg overflow-x-auto text-xs"><code>-- profiles table
-create table profiles (
-  id uuid references auth.users primary key,
-  username text unique not null,
-  bio text,
-  avatar_url text,
-  created_at timestamp with time zone default now()
-);
-alter table profiles enable row level security;
-create policy "Public profiles visible" on profiles for select using (true);
-create policy "Users can update own" on profiles for update using (auth.uid() = id);
-
--- posts, likes, comments, follows tables follow same pattern
--- Replace localStorage calls with: supabase.from('posts').select()</code></pre>
-      <p>Swap <code>localStorage.getItem()</code> → <code>supabase.from('table').select()</code>. Auth: <code>supabase.auth.signUp()</code>, <code>signInWithPassword()</code>. RLS ensures users only edit their own data.</p>
-    </div>
-  </details>
-
-<script>
-// ===== APP STATE =====
-let currentUser = JSON.parse(localStorage.getItem('mns_user') || 'null');
-let users = JSON.parse(localStorage.getItem('mns_users') || '{}');
-let posts = JSON.parse(localStorage.getItem('mns_posts') || '[]');
-let likes = JSON.parse(localStorage.getItem('mns_likes') || '{}');
-let comments = JSON.parse(localStorage.getItem('mns_comments') || '{}');
-let follows = JSON.parse(localStorage.getItem('mns_follows') || '{}');
-
-// ===== UTILS =====
-const $ = sel => document.querySelector(sel);
-const $$ = sel => document.querySelectorAll(sel);
-const hash = str => btoa(str).slice(0, 24);
-const uid = () => crypto.randomUUID();
-const timeAgo = ts => {
-  const s = Math.floor((Date.now() - ts) / 1000);
-  if (s < 60) return `${s}s ago`;
-  const m = Math.floor(s / 60); if (m < 60) return `${m}m ago`;
-  const h = Math.floor(m / 60); if (h < 24) return `${h}h ago`;
-  const d = Math.floor(h / 24); return `${d}d ago`;
-};
-const getYouTubeId = url => {
-  const m = url.match(/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/);
-  return m? m[1] : null;
-};
-const getVimeoId = url => {
-  const m = url.match(/vimeo\.com\/(\d+)/);
-  return m? m[1] : null;
-};
-const getVideoId = url => getYouTubeId(url) || getVimeoId(url);
-
-// ===== RENDER AUTH HEADER =====
-function renderAuth() {
-  const el = $('#authSection');
-  if (currentUser) {
-    const u = users[currentUser.id];
-    el.innerHTML = `
-      <div class="flex items-center gap-3">
-        <button onclick="showProfile('${u.id}')" class="flex items-center gap-2 hover:bg-white/5 rounded-lg px-3 py-2 transition">
-          <img src="${u.avatar}" class="w-8 h-8 rounded-full">
-          <span class="font-semibold hidden sm:block">@${u.username}</span>
-        </button>
-        <button onclick="logout()" class="text-gray-400 hover:text-white text-sm">Logout</button>
-      </div>`;
-    $('#uploadBtn').classList.remove('hidden');
-  } else {
-    el.innerHTML = `
-      <button onclick="showLogin()" class="px-4 py-2 text-gray-300 hover:text-white transition">Login</button>
-      <button onclick="showSignup()" class="px-4 py-2 bg-neon-cyan text-dark-900 font-semibold rounded-lg btn-glow transition">Sign Up</button>`;
-    $('#uploadBtn').classList.add('hidden');
-  }
+  `;
+  
+  $('#searchInput')?.addEventListener('input', renderFeed);
+  $('#sportFilter')?.addEventListener('change', renderFeed);
+  $('#musicFilter')?.addEventListener('change', renderFeed);
+  $('#sortFilter')?.addEventListener('change', renderFeed);
+  
+  renderFeed();
 }
 
-// ===== RENDER FEED =====
-function renderFeed() {
-  const grid = $('#videoGrid');
-  const search = $('#searchInput').value.toLowerCase();
-  const sport = $('#sportFilter').value;
-  const music = $('#musicFilter').value;
-  const sort = $('#sortFilter').value;
-
-  let filtered = posts.filter(p => {
-    const matchSearch =!search || p.title.toLowerCase().includes(search) ||
-                        p.description.toLowerCase().includes(search) ||
-                        users[p.userId]?.username.toLowerCase().includes(search);
-    const matchSport = sport === 'all' || p.sport === sport;
-    const matchMusic = music === 'all' || p.music === music;
-    return matchSearch && matchSport && matchMusic;
-  });
-
-  if (sort === 'likes') {
-    filtered.sort((a, b) => (Object.keys(likes[b.id] || {}).length) - (Object.keys(likes[a.id] || {}).length));
-  } else if (sort === 'comments') {
-    filtered.sort((a, b) => (comments[b.id]?.length || 0) - (comments[a.id]?.length || 0));
-  } else {
-    filtered.sort((a, b) => b.createdAt - a.createdAt);
+// Event Delegation for Upload Button
+document.body.addEventListener('click', function(e) {
+  if (e.target && e.target.id === 'uploadBtn') {
+    openUploadModal();
   }
+});
 
-  if (filtered.length === 0) {
-    grid.innerHTML = `<div class="col-span-full text-center py-20 text-gray-500">No posts found. Be the first to post!</div>`;
-    return;
-  }
-
-  grid.innerHTML = filtered.map(p => {
-    const u = users[p.userId];
-    const likeCount = Object.keys(likes[p.id] || {}).length;
-    const commentCount = comments[p.id]?.length || 0;
-    const isLiked = currentUser && likes[p.id]?.[currentUser.id];
-    return `
-    <article class="glass rounded-2xl overflow-hidden hover:scale-[1.02] transition-all duration-300 animate-fade-in">
-      <div class="aspect-video bg-dark-800 relative cursor-pointer" onclick="showVideo('${p.id}')">
-        <img src="${p.thumbnail}" class="w-full h-full object-cover">
-        <div class="absolute inset-0 bg-gradient-to-t from-dark-900/80 to-transparent"></div>
-        <div class="absolute bottom-3 left-3 flex gap-2">
-          <span class="px-2 py-1 bg-neon-cyan/20 border border-neon-cyan/40 rounded text-xs font-semibold">${p.sport}</span>
-          <span class="px-2 py-1 bg-neon-purple/20 border border-neon-purple/40 rounded text-xs font-semibold">${p.music}</span>
-        </div>
-      </div>
-      <div class="p-4">
-        <h3 class="font-bold text-lg mb-1 line-clamp-2">${p.title}</h3>
-        <p class="text-gray-400 text-sm mb-3 line-clamp-2">${p.description}</p>
-        <div class="flex items-center justify-between">
-          <button onclick="event.stopPropagation(); showProfile('${u.id}')" class="flex items-center gap-2 hover:opacity-80">
-            <img src="${u.avatar}" class="w-7 h-7 rounded-full">
-            <span class="text-sm text-gray-300">@${u.username}</span>
-          </button>
-          <div class="flex items-center gap-4 text-sm text-gray-400">
-            <button onclick="event.stopPropagation(); toggleLike('${p.id}')" class="flex items-center gap-1 hover:text-neon-green transition ${isLiked? 'text-neon-green' : ''}">
-              <svg class="w-5 h-5 ${isLiked? 'fill-current' : ''}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 0 00-6.364 0z"></path></svg>
-              ${likeCount}
-            </button>
-            <span class="flex items-center gap-1">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
-              ${commentCount}
-            </span>
-          </div>
-        </div>
-      </div>
-    </article>`;
-  }).join('');
-}
-
-// ===== AUTH MODALS =====
-function showSignup() {
-  showModal(`
-    <h3 class="font-display font-bold text-2xl mb-6">Create Account</h3>
-    <form onsubmit="handleSignup(event)" class="space-y-4">
-      <input id="su_email" type="email" placeholder="Email" required class="w-full bg-dark-700 border border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-neon-cyan">
-      <input id="su_username" type="text" placeholder="Username" required class="w-full bg-dark-700 border border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-neon-cyan">
-      <input id="su_password" type="password" placeholder="Password" required class="w-full bg-dark-700 border border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-neon-cyan">
-      <button class="w-full py-3 bg-gradient-to-r from-neon-cyan to-neon-green text-dark-900 font-bold rounded-lg btn-glow">Sign Up</button>
-      <p class="text-center text-gray-400 text-sm">Already have an account? <button type="button" onclick="closeModal(); showLogin()" class="text-neon-cyan hover:underline">Login</button></p>
-    </form>`);
-}
-
-function handleSignup(e) {
-  e.preventDefault();
-  const email = $('#su_email').value.trim();
-  const username = $('#su_username').value.trim();
-  const password = $('#su_password').value;
-
-  if (Object.values(users).some(u => u.email === email)) return alert('Email already used');
-  if (Object.values(users).some(u => u.username === username)) return alert('Username taken');
-
-  const id = uid();
-  users[id] = {
-    id, email, username,
-    passwordHash: hash(password),
-    bio: '',
-    avatar: `https://api.dicebear.com/7.x/thumbs/svg?seed=${username}`,
+// ===== INITIALIZATION =====
+if (posts.length === 0) {
+  const dummyUserId = uid();
+  users[dummyUserId] = {
+    id: dummyUserId,
+    username: 'highlight_king',
+    email: 'king@example.com',
+    passwordHash: hash('password'),
+    bio: 'Posting the best mixes daily.',
+    avatar: 'https://api.dicebear.com/7.x/thumbs/svg?seed=highlight_king',
     createdAt: Date.now()
   };
-  currentUser = { id, username };
+  
+  posts.push({
+    id: uid(),
+    userId: dummyUserId,
+    title: 'Lebron James Top 10 Dunks on Trap Beat',
+    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    videoId: 'dQw4w9WgXcQ',
+    sport: 'NBA',
+    music: 'Hip-Hop',
+    description: 'The king of the court meets the king of the beats.',
+    thumbnail: 'https://img.youtube.com/vi/dQw4w9WgXcQ/mqdefault.jpg',
+    createdAt: Date.now() - 86400000
+  });
+  
   localStorage.setItem('mns_users', JSON.stringify(users));
-  localStorage.setItem('mns_user', JSON.stringify(currentUser));
-  closeModal();
-  renderAuth();
-  renderFeed();
-}
-
-function showLogin() {
-  showModal(`
-    <h3 class="font-display font-bold text-2xl mb-6">Welcome Back</h3>
-    <form onsubmit="handleLogin(event)" class="space-y-4">
-      <input id="li_email" type="email" placeholder="Email" required class="w-full bg-dark-700 border border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-neon-cyan">
-      <input id="li_password" type="password" placeholder="Password" required class="w-full bg-dark-700 border border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-neon-cyan">
-      <button class="w-full py-3 bg-gradient-to-r from-neon-cyan to-neon-green text-dark-900 font-bold rounded-lg btn-glow">Login</button>
-      <p class="text-center text-gray-400 text-sm">No account? <button type="button" onclick="closeModal(); showSignup()" class="text-neon-cyan hover:underline">Sign Up</button></p>
-    </form>`);
-}
-
-function handleLogin(e) {
-  e.preventDefault();
-  const email = $('#li_email').value.trim();
-  const password = $('#li_password').value;
-  const user = Object.values(users).find(u => u.email === email);
-  if (!user || user.passwordHash!== hash(password)) return alert('Invalid credentials');
-  currentUser = { id: user.id, username: user.username };
-  localStorage.setItem('mns_user', JSON.stringify(currentUser));
-  closeModal();
-  renderAuth();
-  renderFeed();
-}
-
-function logout() {
-  currentUser = null;
-  localStorage.removeItem('mns_user');
-  renderAuth();
-  renderFeed();
-  showMain();
-}
-
-// ===== PROFILE =====
-function showProfile(userId) {
-  const u = users[userId];
-  if (!u) return;
-  const userPosts = posts.filter(p => p.userId === userId);
-  const followerCount = Object.values(follows).filter(f => f.following === userId).length;
-  const followingCount = Object.keys(follows[currentUser?.id] || {}).length;
-  const isFollowing = currentUser && follows[currentUser.id]?.[userId];
-  const isOwn = currentUser?.id === userId;
-
-  $('#mainContent').innerHTML = `
-    <div class="max-w-4xl mx-auto">
-      <button onclick="showMain()" class="mb-6 text-gray-400 hover:text-white flex items-center gap-2">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
-        Back to Feed
-      </button>
-      <div class="glass rounded-2xl p-8 mb-8">
-        <div class="flex flex-col md:flex-row gap-6 items-start">
-          <img src="${u.avatar}" class="w-24 h-24 rounded-full border-4 border-neon-cyan/30">
-          <div class="flex-1">
-            <div class="flex items-center gap-4 mb-2">
-              <h2 class="font-display font-bold text-3xl">@${u.username}</h2>
-              ${currentUser &&!isOwn? `<button onclick="toggleFollow('${userId}')" class="px-4 py-2 ${isFollowing? 'bg-dark-600' : 'bg-neon-cyan text-dark-900'} font-semibold rounded-lg text-sm">${isFollowing? 'Unfollow' : 'Follow'}</button>` : ''}
-              ${isOwn? `<button onclick="showEditProfile()" class="px-4 py-2 bg-dark-600 rounded-lg text-sm">Edit Profile</button>` : ''}
-            </div>
-            <p class="text-gray-400 mb-4">${u.bio || 'No bio yet.'}</p>
-            <div class="flex gap-6 text-sm">
-              <span><strong class="text-white">${userPosts.length}</strong> <span class="text-gray-400">Posts</span></span>
-              <button onclick="showFollowList('${userId}', 'followers')" class="hover:text-neon-cyan"><strong class="text-white">${followerCount}</strong> <span class="text-gray-400">Followers</span></button>
-              <button onclick="showFollowList('${userId}', 'following')" class="hover:text-neon-cyan"><strong class="text-white">${followingCount}</strong> <span class="text-gray-400">Following</span></button>
-            </div>
-          </div>
-        </div>
-      ${isOwn? `
-      <div class="mb-6">
-        <div class="flex gap-2 border-b border-white/10">
-          <button onclick="showProfileTab('posts')" id="tab-posts" class="px-4 py-2 border-b-2 border-neon-cyan text-neon-cyan font-semibold">My Posts</button>
-          <button onclick="showProfileTab('liked')" id="tab-liked" class="px-4 py-2 border-b-2 border-transparent text-gray-400 hover:text-white">Liked</button>
-        </div>
-      </div>` : ''}
-      <div id="profileGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
-    </div>`;
-
-  if (isOwn) {
-    showProfileTab('posts');
-  } else {
-    $('#profileGrid').innerHTML = userPosts.map(p => renderPostCard(p)).join('') || '<p class="col-span-full text-center text-gray-500 py-20">No posts yet.</p>';
-  }
-}
-
-function showProfileTab(tab) {
-  $$('#tab-posts, #tab-liked').forEach(t => t.classList.remove('border-neon-cyan', 'text-neon-cyan'));
-  $$('#tab-posts, #tab-liked').forEach(t => t.classList.add('border-transparent', 'text-gray-400'));
-  $(`#tab-${tab}`).classList.add('border-neon-cyan', 'text-neon-cyan');
-  $(`#tab-${tab}`).classList.remove('border-transparent', 'text-gray-400');
-
-  if (tab === 'posts') {
-    const userPosts = posts.filter(p => p.userId === currentUser.id);
-    $('#profileGrid').innerHTML = userPosts.map(p => renderPostCard(p, true)).join('') || '<p class="col-span-full text-center text-gray-500 py-20">No posts yet.</p>';
-  } else {
-    const likedPosts = posts.filter(p => likes[p.id]?.[currentUser.id]);
-    $('#profileGrid').innerHTML = likedPosts.map(p => renderPostCard(p)).join('') || '<p class="col-span-full text-center text-gray-500 py-20">No liked videos yet.</p>';
-  }
-}
-
-function renderPostCard(p, showDelete = false) {
-  const u = users[p.userId];
-  const likeCount = Object.keys(likes[p.id] || {}).length;
-  return `
-  <article class="glass rounded-2xl overflow-hidden">
-    <div class="aspect-video bg-dark-800 relative cursor-pointer" onclick="showVideo('${p.id}')">
-      <img src="${p.thumbnail}" class="w-full h-full object-cover">
-      ${showDelete? `<button onclick="event.stopPropagation(); deletePost('${p.id}')" class="absolute top-2 right-2 p-2 bg-red-500/80 rounded-lg hover:bg-red-500"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg></button>` : ''}
-    </div>
-    <div class="p-4">
-      <h3 class="font-bold mb-1 line-clamp-2">${p.title}</h3>
-      <div class="flex items-center justify-between text-sm text-gray-400">
-        <span>${timeAgo(p.createdAt)}</span>
-        <span class="flex items-center gap-1"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path></svg>${likeCount}</span>
-      </div>
-    </div>
-  </article>`;
-}
-
-function deletePost(postId) {
-  if (!confirm('Delete this post?')) return;
-  posts = posts.filter(p => p.id!== postId);
-  delete likes[postId];
-  delete comments[postId];
   localStorage.setItem('mns_posts', JSON.stringify(posts));
-  localStorage.setItem('mns_likes', JSON.stringify(likes));
-  localStorage.setItem('mns_comments', JSON.stringify(comments));
-  showProfile(currentUser.id);
 }
 
-function showEditProfile() {
-  const u = users[currentUser.id];
-  showModal(`
-    <h3 class="font-display font-bold text-2xl mb-6">Edit Profile</h3>
-    <form onsubmit="handleEditProfile(event)" class="space-y-4">
-      <div>
-        <label class="block text-sm text-gray-400 mb-2">Bio</label>
-        <textarea id="edit_bio" rows="3" class="w-full bg-dark-700 border border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-neon-cyan" placeholder="Tell us about your edits...">${u.bio}</textarea>
-      </div>
-      <div>
-        <label class="block text-sm text-gray-400 mb-2">Avatar URL</label>
-        <input id="edit_avatar" type="url" value="${u.avatar}" class="w-full bg-dark-700 border border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-neon-cyan">
-      </div>
-      <button class="w-full py-3 bg-gradient-to-r from-neon-cyan to-neon-green text-dark-900 font-bold rounded-lg btn-glow">Save Changes</button>
-    </form>`);
-}
-
-function handleEditProfile(e) {
-  e.preventDefault();
-  users[currentUser.id].bio =
+showMain();
+renderAuth();
+</script>
+</body>
+</html>
