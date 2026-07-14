@@ -65,7 +65,7 @@ const SUPABASE_URL = 'https://dsgilznlijicfwxgxilv.supabase.co';
 const SUPABASE_ANON_KEY = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRzZ2lsem5saWppY2Z3eGd4aWx2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODM5MDEzNjIsImV4cCI6MjA5OTQ3NzM2Mn0.y0pvBThvU6YX3x-nqJj3Aow_YLPWb-b-3Yw9EezUtGA; // Supabase Dashboard > Settings > API > anon public
 let supabaseClient = null;
 try {
-  if (SUPABASE_ANON_KEY && SUPABASE_ANON_KEY !== 'PASTE_YOUR_ANON_KEY_HERE' && SUPABASE_ANON_KEY.startsWith('eyJ')) {
+  if (SUPABASE_ANON_KEY && SUPABASE_ANON_KEY !== 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRzZ2lsem5saWppY2Z3eGd4aWx2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODM5MDEzNjIsImV4cCI6MjA5OTQ3NzM2Mn0.y0pvBThvU6YX3x-nqJj3Aow_YLPWb-b-3Yw9EezUtGA' && SUPABASE_ANON_KEY.startsWith('eyJ')) {
     supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
   }
 } catch(e){ console.warn('Supabase init failed', e); }
